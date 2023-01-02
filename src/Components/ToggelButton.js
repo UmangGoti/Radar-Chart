@@ -64,7 +64,7 @@ export default function ToggleButton({onPressToggle}) {
       startAnimToOn();
       setIsOn(true);
     }
-    onPressToggle(isOn);
+    onPressToggle(!isOn);
   };
 
   return (
