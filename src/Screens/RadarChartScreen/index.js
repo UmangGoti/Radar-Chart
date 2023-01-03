@@ -9,9 +9,18 @@ import {
 } from 'react-native';
 import {Line, Polygon, Svg} from 'react-native-svg';
 import ToggleButton from '../../Components/ToggelButton';
-import {normalize} from '../../Theme';
+import {Fonts, normalize} from '../../Theme';
 import {EventRegister} from '../../util/EventRegister';
 import {ThemeContext} from '../../util/ThemeContaxt';
+
+let skills = {
+  skills0: 30,
+  skills1: 30,
+  skills2: 30,
+  skills3: 30,
+  skills4: 30,
+  skills5: 30,
+};
 
 /**
  * PI = 3.141
@@ -309,6 +318,29 @@ const RadarChartScreen = ({}) => {
         backgroundColor={theme.background}
       />
       <View style={styles.container}>
+        <View style={styles.topSkillContainer}>
+          <Text
+            style={[
+              styles.skillText,
+              {top: normalize(110), color: theme.outerPolygon},
+            ]}>
+            {skills.skills5}
+          </Text>
+          <Text
+            style={[
+              styles.skillText,
+              {top: normalize(20), color: theme.outerPolygon},
+            ]}>
+            {skills.skills0}
+          </Text>
+          <Text
+            style={[
+              styles.skillText,
+              {top: normalize(110), color: theme.outerPolygon},
+            ]}>
+            {skills.skills1}
+          </Text>
+        </View>
         <Svg
           onStartShouldSetResponder={onStartShouldSetResponder}
           onResponderMove={event => {
@@ -505,6 +537,7 @@ const RadarChartScreen = ({}) => {
                   y0: y0,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills0 = getSkillValue(y0);
                 setPrev({
                   prev0: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -548,6 +581,7 @@ const RadarChartScreen = ({}) => {
                   y1: y1,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills1 = getSkillValue(y1);
                 setPrev({
                   prev1: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -592,6 +626,7 @@ const RadarChartScreen = ({}) => {
                   y2: y2,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills2 = getSkillValue(y2);
                 setPrev({
                   prev2: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -635,6 +670,7 @@ const RadarChartScreen = ({}) => {
                   y3: y3,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills3 = getSkillValue(y3);
                 setPrev({
                   prev3: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -679,6 +715,7 @@ const RadarChartScreen = ({}) => {
                   y4: y4,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills4 = getSkillValue(y4);
                 setPrev({
                   prev4: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -724,6 +761,7 @@ const RadarChartScreen = ({}) => {
                   y5: y5,
                 }));
                 setInnerHexagonPoint(updatedInnerHexagon);
+                skills.skills5 = getSkillValue(state.y5);
                 setPrev({
                   prev5: getLengthOfLine(
                     event.nativeEvent.locationX,
@@ -813,17 +851,15 @@ const RadarChartScreen = ({}) => {
               ).toFixed(2),
             }));
           }}
-          style={{
-            alignSelf: 'center',
-          }}
           height={normalize(400)}
-          width={normalize(400)}>
+          width={normalize(400)}
+          style={{alignSelf: 'center'}}>
           <Line
             x1={coordinatesArray[0].x}
             y1={coordinatesArray[0].y}
             x2={coordinatesArray[3].x}
             y2={coordinatesArray[3].y}
-            strokeWidth={3}
+            strokeWidth={6}
             stroke={theme.outerPolygon}
             strokeLinecap="round"
           />
@@ -832,7 +868,7 @@ const RadarChartScreen = ({}) => {
             y1={coordinatesArray[1].y}
             x2={coordinatesArray[4].x}
             y2={coordinatesArray[4].y}
-            strokeWidth={3}
+            strokeWidth={6}
             stroke={theme.outerPolygon}
             strokeLinecap="round"
           />
@@ -841,7 +877,7 @@ const RadarChartScreen = ({}) => {
             y1={coordinatesArray[5].y}
             x2={coordinatesArray[2].x}
             y2={coordinatesArray[2].y}
-            strokeWidth={3}
+            strokeWidth={6}
             stroke={theme.outerPolygon}
             strokeLinecap="round"
           />
@@ -856,7 +892,7 @@ const RadarChartScreen = ({}) => {
               `}
             fill="transparent"
             stroke={theme.outerPolygon}
-            strokeWidth="3"
+            strokeWidth={6}
             strokeLinejoin="round"
           />
           <Polygon
@@ -869,10 +905,34 @@ const RadarChartScreen = ({}) => {
               ${innerHexagon[5].x} ${innerHexagon[5].y}
               `}
             stroke={theme.innerPolygon}
-            strokeWidth="3"
+            strokeWidth={6}
             strokeLinejoin="round"
           />
         </Svg>
+
+        <View style={styles.bottomSkillContainer}>
+          <Text
+            style={[
+              styles.skillText,
+              {bottom: normalize(110), color: theme.outerPolygon},
+            ]}>
+            {skills.skills5}
+          </Text>
+          <Text
+            style={[
+              styles.skillText,
+              {bottom: normalize(20), color: theme.outerPolygon},
+            ]}>
+            {skills.skills4}
+          </Text>
+          <Text
+            style={[
+              styles.skillText,
+              {bottom: normalize(110), color: theme.outerPolygon},
+            ]}>
+            {skills.skills2}
+          </Text>
+        </View>
       </View>
       <View
         style={{
@@ -885,7 +945,8 @@ const RadarChartScreen = ({}) => {
           style={{
             color: theme.outerPolygon,
             fontSize: Platform.OS === 'ios' ? normalize(13) : normalize(15),
-            fontWeight: 'bold',
+            fontFamily: Fonts.regular,
+            letterSpacing: 1,
           }}>
           Dark Mode {themeMode === 'light' ? 'Off' : 'On'}
           {Platform.OS === 'ios' ? '\t  ' : '\t\t\t'}
@@ -904,4 +965,18 @@ export default RadarChartScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, justifyContent: 'center'},
+  topSkillContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: Platform.OS === 'ios' ? normalize(20) : normalize(30),
+  },
+  skillText: {
+    fontFamily: Fonts.regular,
+    fontSize: normalize(20),
+  },
+  bottomSkillContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: Platform.OS === 'ios' ? normalize(20) : normalize(30),
+  },
 });
