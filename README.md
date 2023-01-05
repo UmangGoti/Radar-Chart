@@ -42,7 +42,7 @@ We use [react-native-svg](https://github.com/software-mansion/react-native-svg.g
 
 ## Example Screen
 
-![radar-chart-with-draggable-point](https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/RadarChartGIF.mov)
+![radar-chart-with-draggable-point](https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/RadraChart.gif)
 
 
 
