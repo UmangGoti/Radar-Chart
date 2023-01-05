@@ -916,14 +916,14 @@ const RadarChartScreen = ({}) => {
               styles.skillText,
               {bottom: normalize(110), color: theme.outerPolygon},
             ]}>
-            {skills.skills5}
+            {skills.skills4}
           </Text>
           <Text
             style={[
               styles.skillText,
               {bottom: normalize(20), color: theme.outerPolygon},
             ]}>
-            {skills.skills4}
+            {skills.skills3}
           </Text>
           <Text
             style={[
