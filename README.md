@@ -54,6 +54,6 @@ We use [react-native-svg](https://github.com/software-mansion/react-native-svg.g
 
 ####
 
-<a href="https://twitter.com/umanggoti" target="_blank"><img src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/SocialMediaIcon/twitter.png" alt="Twitter" width="30">
-<a href="https://in.linkedin.com/in/umang-goti-21995617b" target="_blank"><img src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/SocialMediaIcon/linkedin.png" alt="LinkedIn" width="30"></a>
-<a href="https://github.com/UmangGoti" target="_blank"><img src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/SocialMediaIcon/github.png" alt="GitHub" width="30"></a>
+<a href="https://twitter.com/umanggoti?t=BXOUUrbPi3cIhwWLPI3-5w&s=09"><kbd>X</kbd></a> 
+<a href="https://in.linkedin.com/in/umang-goti-21995617b" target="_blank"><kbd>LinkdIn</kbd></a>
+<a href="https://github.com/UmangGoti" target="_blank"><kbd>GitHub</kbd></a>
