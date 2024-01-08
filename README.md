@@ -44,7 +44,7 @@ We use [react-native-svg](https://github.com/software-mansion/react-native-svg.g
 
 |Dark Mode|Light Mode|RadarChart Gif|
 |:----:|:----:|:----:|
-|<img altr="1" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/DarkMode.png" height="400">|<img altr="2" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/LightMode.png" height="400">|<img altr="3" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/RadraChart.gif" height="400">|
+|<img altr="1" width="200" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/DarkMode.png" height="400">|<img altr="2" width="200" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/LightMode.png" height="400">|<img altr="3" width="200" src="https://github.com/UmangGoti/Radar-Chart/blob/Develop/gif/RadraChart.gif" height="400">|
 
 
 
