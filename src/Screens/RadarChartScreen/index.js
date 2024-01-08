@@ -907,6 +907,7 @@ const RadarChartScreen = ({}) => {
             stroke={theme.innerPolygon}
             strokeWidth={6}
             strokeLinejoin="round"
+            fill={"transparent"}
           />
         </Svg>
 
@@ -945,7 +946,6 @@ const RadarChartScreen = ({}) => {
           style={{
             color: theme.outerPolygon,
             fontSize: Platform.OS === 'ios' ? normalize(13) : normalize(15),
-            fontFamily: Fonts.regular,
             letterSpacing: 1,
           }}>
           Dark Mode {themeMode === 'light' ? 'Off' : 'On'}
@@ -971,7 +971,6 @@ const styles = StyleSheet.create({
     marginHorizontal: Platform.OS === 'ios' ? normalize(20) : normalize(30),
   },
   skillText: {
-    fontFamily: Fonts.regular,
     fontSize: normalize(20),
   },
   bottomSkillContainer: {

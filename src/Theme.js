@@ -29,5 +29,4 @@ const Theme = {
 export default Theme;
 
 export const Fonts = {
-  regular: 'VarelaRound-Regular',
 };
